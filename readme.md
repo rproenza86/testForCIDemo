@@ -22,3 +22,14 @@ To View The Site go to:
 **http://localhost:8080**
 
 Note for the final Chapter I make a chnage to the home.hbs view to show the code going through the entire process. I put that code in a seperate file called home-cat.hbs.
+
+
+## Steps in the automatization process:
+
+1. NodeJs app with its unit test and stored in Github or Bitbucket 
+2. CircleCI account bind with the version control repository
+3. CircleCI app configuration
+4. DockerHub or any other container repository account
+5. DockerHub automated build configuration link with github 
+6. DockerHub automated TRIGGER build configuration for the automated build configuration
+7. CircleCI Environment Variables config for the Docker TRIGGER url
