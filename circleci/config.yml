@@ -35,15 +35,24 @@ jobs:
         
       # run tests!
       - run: yarn test
+  # deploy:
+  #   machine:
+  #       enabled: true
+  #   working_directory: ~/testForCIDemo
+  #   steps:
+  #     - run:
+  #         name: Push application Docker image
+  #         command: $DOCKER_HUB_TRIGGER
   deploy:
-    machine:
-        enabled: true
-    working_directory: ~/testForCIDemo
+    machine: true
     steps:
       - checkout
-      - run:
-          name: Push application Docker image
-          command: $DOCKER_HUB_TRIGGER
+      # start proprietary DB using private Docker image
+      # with credentials stored in the UI
+      - run: |
+          echo $DOCKER_HUB_TRIGGER
+          $DOCKER_HUB_TRIGGER
+
 workflows:
   version: 2
   test-and-deploy:
