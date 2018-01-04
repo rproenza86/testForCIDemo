@@ -36,6 +36,6 @@ jobs:
       # run tests!
       - run: yarn test
       # Push application Docker image
-      - run: $DOCKER_HUB_TRIGGER
+      - run: curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/rproenza86/testforcidemo/trigger/e4420ef0-b724-4abc-b770-18bbf8a9e900/
 
 
