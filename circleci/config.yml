@@ -35,9 +35,7 @@ jobs:
         
       # run tests!
       - run: yarn test
-      - deploy:
-          name: Push application Docker image
-          commands:
-              - $DOCKER_HUB_TRIGGER
+      # Push application Docker image
+      - run: $DOCKER_HUB_TRIGGER
 
 
